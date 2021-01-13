@@ -1,0 +1,285 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.thank{
+  font-family: 'Roboto Mono', monospace;
+  color: #6ba292;
+  margin-bottom: 0px;
+  padding-left: 100px;
+}
+.boxcen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.body {
+  margin: 0;
+  padding: 0px;
+}
+.body1 {
+  padding: 0px;
+  margin: 0;
+  background-color: #e4fde1;
+}
+.body2 {
+  padding: 0px;
+  margin: 0;
+  background-color:black;
+}
+.magical{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 5em;
+  color: #dd614a;
+}
+.mirror{
+  margin-top: 0px;
+  padding-left: 145px;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 5em;
+  color: #ff9b71;
+}
+.h1pre {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  color: #6ba292;
+  text-align: center;
+  font-size: 30px;
+}
+/*check on mirror :/prev*/
+.Ppre {
+  margin: 0px;
+  color: #6ba292;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*Print*/
+.butt2 { 
+  margin: 0px;
+  border-radius: 30px;
+  background-color: #6ba292;
+  border: 5px solid #6ba292;
+}
+.fontbutt2{
+  margin: 5px;
+  padding: 2px;
+  font-family: "K2D", sans-serif;
+  color: white;
+  font-size: 1.5em;
+}
+/*end print*/
+/*home*/
+.butt3 { 
+  margin: 0px;
+  border-radius: 30px;
+  background-color:#ff9b71;
+  border: 5px solid #ff9b71;
+}
+.fontbutt3{
+  margin: 5px;
+  padding: 2px;
+  font-family: "K2D", sans-serif;
+  color:white;
+  font-size: 1.5em;
+}
+.big {
+  margin-bottom: 0px;
+  font-size: 1.5em;
+  font-family: "K2D", sans-serif;
+  color: #6ba292;
+  text-align: center;
+}
+.bigger {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 2.1em;
+  font-family: "Pattaya", sans-serif;
+  color: #dd614a;
+  text-align: center;
+}
+/*ปุ่ม start หน้า home*/
+.butt1 { 
+  margin: 0px;
+  border-radius: 30px;
+  background-color: #ffdc7c;
+  border: 5px solid #6ba292;
+}
+.fontbutt1{
+  margin: 5px;
+  padding: 2px;
+  font-family: "K2D", sans-serif;
+  color: #dd614a;
+  font-size: 1.5em;
+}
+.butt1:hover {
+  background-color:#6ba292; 
+  color: #ffe7a9;
+}
+/*จบปุ่ม start หน้า home*/
+.con {
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  background-color: #ffdc7c;
+}
+.nontx-dec{
+  text-decoration: none;
+}
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color:white;
+  z-index:6;
+}
+div.sticky2 {
+ /* position: -webkit-sticky; 
+  position: fixed;
+  float: left;
+  top: 30px;
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;*/
+
+  position: -webkit-sticky; /* Safari */
+  position: absolute;
+  height: 80%;
+  top: 150px;
+  /*background-color:white;*/
+  z-index:3;
+  left: 50%;
+  margin-left: -120px;
+  
+}
+.topfixed{
+  position:fixed;
+  height: auto;
+ /* padding : 10px 25px 10px 25px;
+  font-family: 'Josefin Sans','Athiti', sans-serif;
+  box-shadow: 0px -4px 5px whitesmoke;
+  background-color:#ffffff;  */
+
+  
+}
+
+
+.downfixed{
+  position: fixed;
+  width: 100%;
+  height: 15%;
+  bottom: 0px;
+  z-index:5;
+  
+}
+#canvas {
+  position: absolute;
+/*
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  max-width: 100%;
+  transform:scale(0.5);*/
+}
+
+
+
+
+.test {
+  justify-content: space-between;
+}
+
+
+ /* Change background color of buttons on hover */
+ .tab button:hover {
+  background-color: #ff9b71;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #dd614a;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 55px 6px 12px 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.back{
+    background-color: #e4fde1;
+}
+
+.button1 {
+  background: #6ba292;
+  width: 100px;
+  padding: 4px 0;                      
+  border-radius: 100px;           
+  border-style: solid;             
+}
+.button3 {
+  background: #ffdc7c;
+  width: 120px;
+  padding: 4px 0;           
+ border-radius: 100px; 
+  border-style: solid;            
+}
+.button4 {
+  background: #dd614a;
+  width: 100px;
+  padding: 4px 0;           
+ border-radius: 100px; 
+  border-style: solid;            
+}
+.canvasset{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 360px) {
+      
+    .button1, .button3, .button4 {
+       
+        width: 90px;
+        padding: 3px 0;                      
+        border-radius: 100px;           
+        border-style: solid;             
+      }
+
+      .fontbutt3{
+        margin: 4px;
+        padding: 2px;
+        font-family: "K2D", sans-serif;
+        color:white;
+        font-size: 1em;
+      }
+      .h1pre {
+        margin-top: 20px;
+        
+      }
+
+      div.sticky2 {
+       
+         top: 130px;
+         
+         
+       }
+  }

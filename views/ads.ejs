@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ads</title>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body onload="myNewSrc()">
+  <div id="section-title">
+    <video preload="auto" onended="myAddListener()" autoplay muted controls width="100%">
+      <source src="" type="video/mp4">
+    </video>
+  </div>
+</body>
+<script type="text/javascript">
+  var videos = [
+    "http://localhost:3001/video/1.mp4"];
+  var currentIndex = 0;
+  // listener function changes src
+  function myNewSrc() {
+    var myVideo = document.getElementsByTagName('video')[0];
+    myVideo.src = videos[currentIndex];
+    myVideo.load();
+  }
+
+
+  // add a listener function to the ended event
+  function myAddListener() {
+    var myVideo = document.getElementsByTagName('video')[0];
+    currentIndex = (currentIndex + 1) % videos.length;
+    myVideo.src = videos[currentIndex];
+    myVideo.addEventListener('ended', myNewSrc, false);
+
+  }
+
+  async function scan() {
+    var x = 1;
+    const data = { x };
+    console.log(data);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+
+    const res = await fetch('/upcheck', options);
+    const json = await res.json();
+    setTimeout(function opening() { window.location.replace("/") }, 1000);
+
+  }
+</script>
+
+</html>

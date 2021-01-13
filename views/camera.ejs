@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<haed>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        video {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    </style>
+
+</haed>
+
+<body>
+
+    <input id="fnc1" type="image" src="http://localhost:3000/icon/1-1blackmon.png" width="84"
+        height="84">&nbsp;&nbsp;&nbsp;
+    <input id="fnc2" type="image" src="http://localhost:3000/icon/3-4blackmon.png" width="84"
+        height="84">&nbsp;&nbsp;&nbsp;
+    <input id="fnc3" type="image" src="http://localhost:3000/icon/16-9black.png" width="84" height="84">>
+    <div class="video-wrap">
+        <video id="video" playinline autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="controller">
+        <input id="snap" type="image" src="http://localhost:3000/icon/cam.png" width="90" height="90">
+    </div>
+</body>
+<script>
+
+    'use strict';
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+
+    const snap = document.getElementById('snap');
+
+    const fnc1 = document.getElementById('fnc1');
+    const fnc2 = document.getElementById('fnc2');
+    const errorMsgElement = document.getElementById('spanErrorMsg');
+    var hhh = 400;
+    var www = 300;
+
+    var constraints = {
+        audio: false,
+        video: {
+            width: 300, height: 400
+        }
+    };
+
+    async function init() {
+        try {
+            const straem = await navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(straem);
+        }
+        catch (e) {
+            errorMsgElement.innerHTML = 'navigator.getUserMedia.error:${e.toString()}';
+
+        }
+    }
+
+    function handleSuccess(stream) {
+        window.stream = stream;
+        video.srcObject = stream;
+
+    }
+
+    init();
+    var context = canvas.getContext('2d');
+    setTimeout(async function takephoto() {
+        //snap.addEventListener("click", async event => {
+            canvas.width = www;
+            canvas.height = hhh;
+            context.translate(www, 0);
+            context.scale(-1, 1);
+            context.drawImage(video, 0, 0, www, hhh);
+            var dataURL = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream"); //แปลงเป็นbase64
+            console.log(dataURL);
+
+            const data = { dataURL };
+
+            console.log(data);
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            const res = await fetch('/api', options);
+            const json = await res.json();
+            await setTimeout(function opening(){window.location.replace("/photo_ori")},10000); //อเวทรอผลก่อนค่อยรี
+        //});
+    },3000)
+
+
+</script>
+
+
+</html>
